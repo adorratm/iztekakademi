@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://iztekakademi.com/tr/sitemap.xml
+Sitemap: https://iztekakademi.com/tr/sitemapindex.xml
