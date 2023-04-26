@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 26, 2023 at 12:48 PM
+-- Generation Time: Apr 26, 2023 at 01:35 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -727,7 +727,7 @@ CREATE TABLE `pages` (
 --
 
 INSERT INTO `pages` (`id`, `url`, `title`, `content`, `img_url`, `banner_url`, `pdf_url`, `lang`, `rank`, `isActive`, `createdAt`, `updatedAt`, `sharedAt`, `type`, `gallery_id`) VALUES
-(1, 'hakkimizda', 'Hakkımızda', '<p class=\"MsoNormal\">İstek Akademi bünyesinde yer alan Ustalık Telafi Programı, çalışanların mesleki tecrübesini artıran ve program sonucunda ustalık belgesini almasını sağlayan süreli bir programdır.</p>\r\n<p class=\"MsoNormal\">Bu program ülkemizdeki ara eleman açığını kapatmak ve nitelikli işgücüne katkı sağlamak için işletmelerdeki çalışanların yaptıkları iş konusunda belge sahibi olması ve Avrupa normlarına uyum sağlamalarını destekler.</p>\r\n<p class=\"MsoNormal\">Yürütücü ve sorumlu kurum Millî Eğitim Bakanlığı’dır ve amacı, iş yerindeki pratik öğrenmenin pekiştirilmesi ve akabinde yapılacak sınavda başarılı olanlara ustalık belgesi verilmesidir.</p>\r\n<p class=\"MsoNormal\">Siz de Ustalık Telafi Programından faydalanarak üretim kalitenizi artırabilir; nitelikli personel istihdamı sağlayabilirsiniz.</p>', 'ef05eff00a2e24af66cfc3efac099e35.webp', 'c61181615c3341f053c244781e1d77b6.webp', NULL, 'tr', 1, 1, '2022-02-23 06:24:54', '2023-04-26 09:24:41', '2022-02-23 06:24:26', 'SIMPLE', NULL);
+(1, 'hakkimizda', 'Hakkımızda', '<p class=\"MsoNormal\">İstek Akademi bünyesinde yer alan Ustalık Telafi Programı, çalışanların mesleki tecrübesini artıran ve program sonucunda ustalık belgesini almasını sağlayan süreli bir programdır.</p>\r\n<p class=\"MsoNormal\">Bu program ülkemizdeki ara eleman açığını kapatmak ve nitelikli işgücüne katkı sağlamak için işletmelerdeki çalışanların yaptıkları iş konusunda belge sahibi olması ve Avrupa normlarına uyum sağlamalarını destekler.</p>\r\n<p class=\"MsoNormal\">Yürütücü ve sorumlu kurum Millî Eğitim Bakanlığı’dır ve amacı, iş yerindeki pratik öğrenmenin pekiştirilmesi ve akabinde yapılacak sınavda başarılı olanlara ustalık belgesi verilmesidir.</p>\r\n<p class=\"MsoNormal\">Siz de Ustalık Telafi Programından faydalanarak üretim kalitenizi artırabilir; nitelikli personel istihdamı sağlayabilirsiniz.</p>', 'f23a1b637c3207c421c04e63a33478bb.webp', '6a83a8092d57ba0be3069538d891e8ae.webp', NULL, 'tr', 1, 1, '2022-02-23 06:24:54', '2023-04-26 11:30:31', '2022-02-23 06:24:26', 'SIMPLE', NULL);
 
 -- --------------------------------------------------------
 
@@ -780,7 +780,7 @@ CREATE TABLE `service_categories` (
 --
 
 INSERT INTO `service_categories` (`id`, `title`, `seo_url`, `img_url`, `home_url`, `banner_url`, `lang`, `rank`, `isActive`, `createdAt`, `updatedAt`) VALUES
-(1, 'Hizmetlerimiz', 'hizmetlerimiz', 'b435dd4ae0776a89ac9831be21216ffe.webp', NULL, 'ef40a9cc6a3cf01472aab27640f8c9d9.webp', 'tr', 1, 1, '2023-02-23 14:46:08', '2023-04-26 09:25:34');
+(1, 'Hizmetlerimiz', 'hizmetlerimiz', 'f1108fef6f968075664f717c0dd29c67.webp', NULL, 'ef40a9cc6a3cf01472aab27640f8c9d9.webp', 'tr', 1, 1, '2023-02-23 14:46:08', '2023-04-26 11:31:02');
 
 -- --------------------------------------------------------
 
@@ -808,7 +808,16 @@ CREATE TABLE `service_images` (
 --
 
 INSERT INTO `service_images` (`id`, `service_id`, `url`, `img_url`, `title`, `description`, `lang`, `rank`, `isActive`, `isCover`, `createdAt`, `updatedAt`) VALUES
-(1, 1, 'f1d6a33cd996913e64935b271771d7d4.webp', NULL, NULL, NULL, 'tr', 1, 1, 1, '2023-04-26 10:39:05', '2023-04-26 10:46:24');
+(1, 1, '948d1adbf539f5bf75406a89b0b9e233.webp', NULL, NULL, NULL, 'tr', 1, 1, 1, '2023-04-26 11:12:58', '2023-04-26 11:13:02'),
+(2, 1, '624331bb059100e252600abd68a735dc.webp', NULL, NULL, NULL, 'tr', 2, 1, 0, '2023-04-26 11:13:00', '2023-04-26 11:13:00'),
+(3, 1, '5a3460aaefec080ae510f35243a16617.webp', NULL, NULL, NULL, 'tr', 3, 1, 0, '2023-04-26 11:13:04', '2023-04-26 11:13:04'),
+(4, 1, '247442258b32a25ba4432b13742971d0.webp', NULL, NULL, NULL, 'tr', 4, 1, 0, '2023-04-26 11:13:07', '2023-04-26 11:13:07'),
+(5, 1, '4549de613a16a06dda8d210b2c306bc1.webp', NULL, NULL, NULL, 'tr', 5, 1, 0, '2023-04-26 11:13:09', '2023-04-26 11:13:09'),
+(6, 1, 'd0973f12468d1bf9216d6303ca5afe6d.webp', NULL, NULL, NULL, 'tr', 6, 1, 0, '2023-04-26 11:13:11', '2023-04-26 11:13:11'),
+(7, 1, '5bfd37a441285523bd7cb619719d4d36.webp', NULL, NULL, NULL, 'tr', 7, 1, 0, '2023-04-26 11:13:13', '2023-04-26 11:13:13'),
+(8, 1, '130e043c8dedcee805e20fd1a612be80.webp', NULL, NULL, NULL, 'tr', 8, 1, 0, '2023-04-26 11:13:17', '2023-04-26 11:13:17'),
+(9, 1, '263337cb91003083df8a4caba1b36251.webp', NULL, NULL, NULL, 'tr', 9, 1, 0, '2023-04-26 11:13:22', '2023-04-26 11:13:22'),
+(10, 1, '6bc8639a3c719f3a4c72eb2c1a278e0c.webp', NULL, NULL, NULL, 'tr', 10, 1, 0, '2023-04-26 11:13:24', '2023-04-26 11:13:24');
 
 -- --------------------------------------------------------
 
@@ -864,7 +873,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `company_name`, `slogan`, `address`, `address_title`, `map`, `logo`, `mobile_logo`, `favicon`, `mobile_logo_2`, `blog_logo`, `about_logo`, `gallery_logo`, `contact_logo`, `service_logo`, `service_detail_logo`, `category_logo`, `catalog`, `sector_logo`, `phone`, `fax`, `whatsapp`, `email`, `facebook`, `twitter`, `instagram`, `linkedin`, `youtube`, `medium`, `pinterest`, `meta_description`, `analytics`, `metrica`, `rank`, `createdAt`, `updatedAt`, `isActive`, `lang`, `crawler_email`, `crawler_password`) VALUES
-(1, 'İztek Akademi', 'İztek Akademi', '[\"Hac\\u0131 Hasan Mahallesi Kuyumcular Sokak No : 4\\/2 Demirci - Manisa\"]', '[\"Merkez\"]', '[\"https:\\/\\/www.google.com.tr\\/maps\\/place\\/Hac%C4%B1hasan,+Kuyumcular+Sk.,+45900+Demirci%2FManisa\\/@39.0452756,28.6541251,21z\\/data=!4m6!3m5!1s0x14b7e261e687eb51:0x285efc83caea73b1!8m2!3d39.0453077!4d28.6544108!16s%2Fg%2F113h22fw0?hl=tr\"]', 'd030eb695caeea4efc67a41210fb48e1.webp', '0e974073eebe072c3d5becda0ee3a08c.webp', 'b067f8fe47e74e922e9ce1b3c91c07ef.webp', '348b0ac8a13263c08aa4b42b5503e16c.webp', '72bfe10e11b1e014f7e6e1a469b19bc0.webp', '3e40a6ee9a7fa514bcb8eca1c848dee9.webp', '5218d35b6b602edc760949c9cc0d4ec4.webp', 'f1754f79075aaa66cfa4565adaefa46c.webp', '34983714365180307b0ba735b0787484.webp', '53f8b7c9eedc7158c6b85c5028e1488a.webp', 'b5febd207a702093d0fdd50b2931ba4c.webp', '2ba528197b3ca10368b015fcd8e572c2.pdf', '3033f5118d692aca739c45bda5e11957.webp', '[\"+90 532 598 35 95\"]', '[\"\"]', '[\"+90 532 598 35 95\"]', 'info@iztekakademi.com.tr', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'İstek Akademi bünyesinde yer alan Ustalık Telafi Programı, çalışanların mesleki tecrübesini artıran ve program sonucunda ustalık belgesini almasını sağlayan süreli bir programdır.', '', '', 1, '2020-07-22 20:57:22', '2023-04-26 10:32:33', 1, 'tr', 'emrekilic@mutfakyapim.com', 'MutfakYapim35?');
+(1, 'İztek Akademi', 'İztek Akademi', '[\"BEGOS  BUCA OSB MAHALLES\\u0130 2\\/21 SOKAK NO:9 BUCA\\u00a0\\/\\u0130ZM\\u0130R\"]', '[\"Merkez\"]', '[\"&lt;iframe src=&quot;https:\\/\\/www.google.com\\/maps\\/embed?pb=!1m18!1m12!1m3!1d6254.334394392741!2d27.192970247734017!3d38.391383000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b9623e7cb92393%3A0x28395b297e67e06!2zQlVDQSBFR0UgT1JHQU7EsFpFIFNBTkFZxLAgQsOWTEdFU8Sw!5e0!3m2!1sen!2str!4v1682508875035!5m2!1sen!2str&quot; width=&quot;100%&quot; height=&quot;450&quot; style=&quot;border:0;&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;&lt;\\/iframe&gt;\"]', 'd030eb695caeea4efc67a41210fb48e1.webp', '0e974073eebe072c3d5becda0ee3a08c.webp', 'b067f8fe47e74e922e9ce1b3c91c07ef.webp', '348b0ac8a13263c08aa4b42b5503e16c.webp', '9f68c3f3f774fc197e822f8690bb2be9.webp', '6aa5b4adb55e9caa9513f7702dcf00da.webp', '55f818d6d0ada47fecc15c2f809d7cd4.webp', '9ac4c99ffa7cbc1c9ca5e715ba76eaee.webp', 'a524950bfa2e380b43332a1904538a41.webp', 'bbf9c312780d78a48e2a746b85a2c18b.webp', '8e8eebab611d5998ddbcd80f4003aa21.webp', '2ba528197b3ca10368b015fcd8e572c2.pdf', 'f37a81c3f57f3d8c339afa51f711627e.webp', '[\"+90 553 026 75 90\"]', '[\"\"]', '[\"+90 553 026 75 90\"]', 'info@iztekakademi.com.tr', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'İstek Akademi bünyesinde yer alan Ustalık Telafi Programı, çalışanların mesleki tecrübesini artıran ve program sonucunda ustalık belgesini almasını sağlayan süreli bir programdır.', '', '', 1, '2020-07-22 20:57:22', '2023-04-26 11:34:52', 1, 'tr', 'emrekilic@mutfakyapim.com', 'MutfakYapim35?');
 
 -- --------------------------------------------------------
 
@@ -902,8 +911,8 @@ CREATE TABLE `slides` (
 --
 
 INSERT INTO `slides` (`id`, `title`, `description`, `img_url`, `mobile_url`, `allowButton`, `button_url`, `target`, `button_caption`, `video_url`, `video_caption`, `page_id`, `collection_id`, `product_id`, `service_id`, `sector_id`, `lang`, `rank`, `isActive`, `createdAt`, `updatedAt`, `sharedAt`) VALUES
-(1, NULL, '', 'be57b734745f3402df47955e87363fa5.webp', '58362177a39e63e0e40c829cab01363f.webp', 1, '#', '_self', '#', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'tr', 2, 1, '2023-04-13 10:40:04', '2023-04-26 10:46:37', '2023-04-13 10:39:17'),
-(2, NULL, '', '11129f90c36663deee87c23bf5cbf584.webp', '825eaf867c54ebf79a9ca74c5e31c947.webp', 1, '#', '_self', '#', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'tr', 1, 1, '2023-04-13 10:41:00', '2023-04-26 10:46:39', '2023-04-13 10:40:46');
+(1, 'İztek Akademi', '<p>İztek Akademi</p>', '926c6258d84b93daeb1f03a41d5592a7.webp', '37abadd3a90a933277020c96d3df96de.webp', 0, '#', '_self', '#', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'tr', 2, 1, '2023-04-13 10:40:04', '2023-04-26 11:16:32', '2023-04-13 10:39:17'),
+(2, 'İztek Akademi', '<p>İztek Akademi</p>', '0d348e7b282f17bdef4b6e54f5d5dc64.webp', '1ea298b1b4039ebed5ba87c3de8f5226.webp', 0, '#', '_self', '#', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'tr', 1, 1, '2023-04-13 10:41:00', '2023-04-26 11:16:22', '2023-04-13 10:40:46');
 
 -- --------------------------------------------------------
 
@@ -1279,7 +1288,7 @@ ALTER TABLE `service_categories`
 -- AUTO_INCREMENT for table `service_images`
 --
 ALTER TABLE `service_images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `settings`
