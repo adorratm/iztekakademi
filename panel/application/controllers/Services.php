@@ -72,7 +72,7 @@ class Services extends MY_Controller
         $data = rClean($this->input->post());
         if (checkEmpty($data)["error"] && checkEmpty($data)["key"] !== "description") :
             $key = checkEmpty($data)["key"];
-            echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Faaliyet Güncelleştirilirken Hata Oluştu. \"{$key}\" Bilgisini Doldurduğunuzdan Emin Olup Tekrar Deneyin."]);
+            echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Hizmet Güncelleştirilirken Hata Oluştu. \"{$key}\" Bilgisini Doldurduğunuzdan Emin Olup Tekrar Deneyin."]);
         else :
             $getRank = $this->service_model->rowCount();
             if (!empty($_FILES)) :
@@ -81,7 +81,7 @@ class Services extends MY_Controller
                     if ($image["success"]) :
                         $data["img_url"] = $image["file_name"];
                     else :
-                        echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Faaliyet Kaydı Yapılırken Hata Oluştu. Faaliyet Görseli Seçtiğinizden Emin Olup Tekrar Deneyin."]);
+                        echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Hizmet Kaydı Yapılırken Hata Oluştu. Hizmet Görseli Seçtiğinizden Emin Olup Tekrar Deneyin."]);
                         die();
                     endif;
                 endif;
@@ -92,9 +92,9 @@ class Services extends MY_Controller
             $data["rank"] = $getRank + 1;
             $insert = $this->service_model->add($data);
             if ($insert) :
-                echo json_encode(["success" => true, "title" => "Başarılı!", "message" => "Faaliyet Başarıyla Eklendi."]);
+                echo json_encode(["success" => true, "title" => "Başarılı!", "message" => "Hizmet Başarıyla Eklendi."]);
             else :
-                echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Faaliyet Eklenirken Hata Oluştu, Lütfen Tekrar Deneyin."]);
+                echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Hizmet Eklenirken Hata Oluştu, Lütfen Tekrar Deneyin."]);
             endif;
         endif;
     }
@@ -113,7 +113,7 @@ class Services extends MY_Controller
         $data = $this->input->post();
         if (checkEmpty($data)["error"] && checkEmpty($data)["key"] !== "description") :
             $key = checkEmpty($data)["key"];
-            echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Faaliyet Güncelleştirilirken Hata Oluştu. \"{$key}\" Bilgisini Doldurduğunuzdan Emin Olup Tekrar Deneyin."]);
+            echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Hizmet Güncelleştirilirken Hata Oluştu. \"{$key}\" Bilgisini Doldurduğunuzdan Emin Olup Tekrar Deneyin."]);
         else :
             if (!empty($_FILES)) :
                 if (!empty($_FILES["img_url"]["name"])) :
@@ -121,7 +121,7 @@ class Services extends MY_Controller
                     if ($image["success"]) :
                         $data["img_url"] = $image["file_name"];
                     else :
-                        echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Faaliyet Kaydı Yapılırken Hata Oluştu. Faaliyet Görseli Seçtiğinizden Emin Olup Tekrar Deneyin."]);
+                        echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Hizmet Kaydı Yapılırken Hata Oluştu. Hizmet Görseli Seçtiğinizden Emin Olup Tekrar Deneyin."]);
                         die();
                     endif;
                 endif;
@@ -129,9 +129,9 @@ class Services extends MY_Controller
             $data["seo_url"] = seo($data["title"]);
             $data["description"] = clean($_POST["description"]) ? $_POST["description"] : NULL;
             if ($this->service_model->update(["id" => $id], $data)) :
-                echo json_encode(["success" => true, "title" => "Başarılı!", "message" => "Faaliyet Başarıyla Güncelleştirildi."]);
+                echo json_encode(["success" => true, "title" => "Başarılı!", "message" => "Hizmet Başarıyla Güncelleştirildi."]);
             else :
-                echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Faaliyet Güncelleştirilirken Hata Oluştu, Lütfen Tekrar Deneyin."]);
+                echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Hizmet Güncelleştirilirken Hata Oluştu, Lütfen Tekrar Deneyin."]);
             endif;
         endif;
     }
@@ -154,9 +154,9 @@ class Services extends MY_Controller
                         endif;
                     endforeach;
                 endif;
-                echo json_encode(["success" => true, "title" => "Başarılı!", "message" => "Faaliyet Başarıyla Silindi."]);
+                echo json_encode(["success" => true, "title" => "Başarılı!", "message" => "Hizmet Başarıyla Silindi."]);
             else :
-                echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Faaliyet Silinirken Hata Oluştu, Lütfen Tekrar Deneyin."]);
+                echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Hizmet Silinirken Hata Oluştu, Lütfen Tekrar Deneyin."]);
             endif;
         endif;
     }
@@ -258,9 +258,9 @@ class Services extends MY_Controller
             if (!is_dir($url) && file_exists($url)) :
                 unlink($url);
             endif;
-            echo json_encode(["success" => true, "title" => "Başarılı!", "message" => "Faaliyet Görseli Başarıyla Silindi."]);
+            echo json_encode(["success" => true, "title" => "Başarılı!", "message" => "Hizmet Görseli Başarıyla Silindi."]);
         else :
-            echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Faaliyet Görseli Silinirken Hata Oluştu, Lütfen Tekrar Deneyin."]);
+            echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Hizmet Görseli Silinirken Hata Oluştu, Lütfen Tekrar Deneyin."]);
         endif;
     }
     public function fileIsActiveSetter($id)

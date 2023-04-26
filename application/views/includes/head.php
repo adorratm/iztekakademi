@@ -67,17 +67,25 @@
     <link type="text/css" href="<?= asset_url("public/css/iziToast.min.css") ?>" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <!-- #iziToast -->
     <link type="text/css" href="<?= asset_url("public/css/bootstrap.min.css") ?>" rel="stylesheet">
-    <link type="text/css" href="<?= asset_url("public/vendors/animate/animate.min.css") ?>" rel="stylesheet">
-    <link type="text/css" href="<?= asset_url("public/vendors/animate/custom-animate.css") ?>" rel="stylesheet">
+    <link type="text/css" href="<?= asset_url("public/vendors/css/animate.min.css") ?>" rel="stylesheet">
+    <link type="text/css" href="<?= asset_url("public/vendors/css/custom-animate.css") ?>" rel="stylesheet">
     <link type="text/css" href="<?= asset_url("public/css/all.min.css") ?>" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link type="text/css" href="<?= asset_url("public/css/v4-shims.min.css") ?>" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link type="text/css" href="<?= asset_url("public/vendors/css/owl.css") ?>" rel="stylesheet">
-    <link type="text/css" href="<?= asset_url("public/vendors/css/animate.css") ?>" rel="stylesheet">
-    <link type="text/css" href="<?= asset_url("public/vendors/css/color.css") ?>" rel="stylesheet">
-    <link type="text/css" href="<?= asset_url("public/vendors/css/global.css") ?>" rel="stylesheet">
-    <link type="text/css" href="<?= asset_url("public/vendors/css/elpath.css") ?>" rel="stylesheet">
-    <link type="text/css" href="<?= asset_url("public/vendors/css/style.css") ?>" rel="stylesheet">
-    <link type="text/css" href="<?= asset_url("public/vendors/css/responsive.css") ?>" rel="stylesheet">
+    <link type="text/css" href="<?= asset_url("public/vendors/css/jarallax.css") ?>" rel="stylesheet">
+    <link type="text/css" href="<?= asset_url("public/vendors/css/nouislider.min.css") ?>" rel="stylesheet">
+    <link type="text/css" href="<?= asset_url("public/vendors/css/nouislider.pips.css") ?>" rel="stylesheet">
+    <link type="text/css" href="<?= asset_url("public/vendors/css/odometer.min.css") ?>" rel="stylesheet">
+    <link type="text/css" href="<?= asset_url("public/vendors/css/swiper.min.css") ?>" rel="stylesheet">
+    <link type="text/css" href="<?= asset_url("public/vendors/css/tiny-slider.min.css") ?>" rel="stylesheet">
+    <link type="text/css" href="<?= asset_url("public/vendors/css/owl.carousel.min.css") ?>" rel="stylesheet">
+    <link type="text/css" href="<?= asset_url("public/vendors/css/owl.theme.default.min.css") ?>" rel="stylesheet">
+    <link type="text/css" href="<?= asset_url("public/vendors/css/jquery.bxslider.css") ?>" rel="stylesheet">
+    <link type="text/css" href="<?= asset_url("public/vendors/css/bootstrap-select.min.css") ?>" rel="stylesheet">
+    <link type="text/css" href="<?= asset_url("public/vendors/css/vegas.min.css") ?>" rel="stylesheet">
+    <link type="text/css" href="<?= asset_url("public/vendors/css/jquery-ui.css") ?>" rel="stylesheet">
+    <link type="text/css" href="<?= asset_url("public/vendors/css/timePicker.css") ?>" rel="stylesheet">
+    <link type="text/css" href="<?= asset_url("public/vendors/css/sinace.css") ?>" rel="stylesheet">
+    <link type="text/css" href="<?= asset_url("public/vendors/css/sinace-responsive.css") ?>" rel="stylesheet">
     <link type="text/css" href="<?= asset_url("public/css/lightgallery.min.css") ?>" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link type="text/css" href="<?= asset_url("public/css/iziModal.min.css") ?>" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <style>
@@ -245,26 +253,13 @@
 
 </head>
 
-<body>
-    <div class="boxed_wrapper">
+<body class="custom-cursor">
+    <div class="custom-cursor__cursor"></div>
+    <div class="custom-cursor__cursor-two"></div>
+    
+    <div class="preloader">
+        <div class="preloader__image" style="background-image: url(<?= get_picture("settings_v", $settings->logo) ?>);"></div>
+    </div>
+    <!-- /.preloader -->
 
-
-        <!-- mouse-pointer -->
-        <div class="mouse-pointer" id="mouse-pointer">
-            <div class="icon"><i class="far fa-angle-left"></i><i class="far fa-angle-right"></i></div>
-        </div>
-        <!-- mouse-pointer end -->
-
-
-        <!-- preloader -->
-        <div class="loader-wrap">
-            <div class="preloader" >
-                <div class="preloader-close">x</div>
-                <div id="handle-preloader" class="handle-preloader bg-light">
-                    <div class="animation-preloader">
-                        <img loading="lazy" width="220" class="lazyload img-fluid" data-src="<?= get_picture("settings_v", $settings->logo) ?>" alt="<?= $settings->company_name ?>">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- preloader end -->
+    <div class="page-wrapper">

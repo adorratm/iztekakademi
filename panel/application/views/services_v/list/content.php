@@ -3,8 +3,8 @@
 	<div class="row">
 		<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
 			<h4 class="mb-3">
-				Faaliyet Listesi
-				<a href="javascript:void(0)" data-url="<?= base_url("services/new_form"); ?>" class="btn btn-sm btn-outline-primary rounded-0 float-right createServiceBtn"> <i class="fa fa-plus"></i> Faaliyet Ekle</a>
+				Hizmet Listesi
+				<a href="javascript:void(0)" data-url="<?= base_url("services/new_form"); ?>" class="btn btn-sm btn-outline-primary rounded-0 float-right createServiceBtn"> <i class="fa fa-plus"></i> Hizmet Ekle</a>
 			</h4>
 		</div>
 		<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -17,10 +17,10 @@
 						<button class="btn btn-sm btn-outline-danger rounded-0 " onclick="clearFilter('filter_form','serviceTable')" id="clear_button" data-toggle="tooltip" data-placement="top" data-title="Filtreyi Temizle" data-original-title="" title=""><i class="fa fa-eraser"></i></button>
 					</label>
 					<label for="search_button" class="mx-1">
-						<button class="btn btn-sm btn-outline-success rounded-0 " onclick="reloadTable('serviceTable')" id="search_button" data-toggle="tooltip" data-placement="top" data-title="Faaliyet Ara"><i class="fa fa-search"></i></button>
+						<button class="btn btn-sm btn-outline-success rounded-0 " onclick="reloadTable('serviceTable')" id="search_button" data-toggle="tooltip" data-placement="top" data-title="Hizmet Ara"><i class="fa fa-search"></i></button>
 					</label>
 					<label for="delete_button" class="mx-1 toggleLabel d-none">
-						<button class="btn btn-sm btn-outline-danger rounded-0 " data-url="<?= base_url("services/deleteBulk") ?>" id="delete_button" data-toggle="tooltip" data-placement="top" data-title="Seçili Faaliyetleri Sil"><i class="fa fa-trash"></i></button>
+						<button class="btn btn-sm btn-outline-danger rounded-0 " data-url="<?= base_url("services/deleteBulk") ?>" id="delete_button" data-toggle="tooltip" data-placement="top" data-title="Seçili Hizmetleri Sil"><i class="fa fa-trash"></i></button>
 					</label>
 				</div>
 			</form>
@@ -30,7 +30,7 @@
 					<th class="order"><i class="fa fa-reorder"></i></th>
 					<th class="w50">#id</th>
 					<th>Başlık</th>
-					<th>Faaliyet Kategorisi</th>
+					<th>Hizmet Kategorisi</th>
 					<th>Durumu</th>
 					<th>Güncelleme Tarihi</th>
 					<th class="nosort">İşlem</th>
@@ -95,13 +95,13 @@
 			e.stopImmediatePropagation();
 			$('#serviceModal').iziModal('destroy');
 			let url = $(this).data("url");
-			createModal("#serviceModal", "Faaliyet Ekle", "Faaliyet Ekle", 600, true, "20px", 0, "#e20e17", "#fff", 1040, function() {
+			createModal("#serviceModal", "Hizmet Ekle", "Hizmet Ekle", 600, true, "20px", 0, "#e20e17", "#fff", 1040, function() {
 				$.post(url, {}, function(response) {
 					$("#serviceModal .iziModal-content").html(response);
 					TinyMCEInit();
 					flatPickrInit();
 					$(".tagsInput").select2({
-						placeholder: 'Faaliyet Kategorisi Seçiniz.',
+						placeholder: 'Hizmet Kategorisi Seçiniz.',
 						width: 'resolve',
 						theme: "classic",
 						tags: false,
@@ -129,13 +129,13 @@
 			e.stopImmediatePropagation();
 			$('#serviceModal').iziModal('destroy');
 			let url = $(this).data("url");
-			createModal("#serviceModal", "Faaliyet Düzenle", "Faaliyet Düzenle", 600, true, "20px", 0, "#e20e17", "#fff", 1040, function() {
+			createModal("#serviceModal", "Hizmet Düzenle", "Hizmet Düzenle", 600, true, "20px", 0, "#e20e17", "#fff", 1040, function() {
 				$.post(url, {}, function(response) {
 					$("#serviceModal .iziModal-content").html(response);
 					TinyMCEInit();
 					flatPickrInit();
 					$(".tagsInput").select2({
-						placeholder: 'Faaliyet Kategorisi Seçiniz.',
+						placeholder: 'Hizmet Kategorisi Seçiniz.',
 						width: 'resolve',
 						theme: "classic",
 						tags: false,

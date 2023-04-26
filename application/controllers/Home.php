@@ -53,10 +53,18 @@ class Home extends MY_Controller
          */
         $this->viewData->instagramPosts = $this->general_model->get_all("instagram_posts", null, "id ASC");
         /**
-         * Service Categories
+         * Services
          */
-        $this->viewData->service_categories = $this->general_model->get_all("service_categories", null, "id ASC", ["isActive" => 1, "lang" => $this->viewData->lang], [], [], [8]);
-        
+        $wheres["s.isActive"] = 1;
+        $wheres["si.isCover"] = 1;
+        $wheres["s.lang"] = $this->viewData->lang;
+        $joins = ["service_categories sc" => ["s.category_id = sc.id", "left"], "service_images si" => ["si.service_id = s.id", "left"]];
+
+        $select = "s.id,s.title,s.description,s.seo_url,si.url img_url,s.isActive";
+        $distinct = true;
+        $groupBy = ["s.id"];
+        $this->viewData->services = $this->general_model->get_all("services s", $select, "s.id DESC", $wheres, [], $joins, [6], [], $distinct, $groupBy);
+
         $this->viewData->meta_title = clean(strto("lower|ucwords", lang("home"))) . " - " . $this->viewData->settings->company_name;
         $this->viewData->meta_desc  = str_replace("”", "\"", @stripslashes($this->viewData->settings->meta_description));
 

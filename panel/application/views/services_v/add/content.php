@@ -19,7 +19,7 @@
     <div class="row">
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="form-group">
-                <label>Faaliyet Kategorisi</label>
+                <label>Hizmet Kategorisi</label>
                 <select class="rounded-0 tagsInput" name="category_id" required>
                     <?php foreach ($categories as $category) : ?>
                         <option value="<?= $category->id; ?>">

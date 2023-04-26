@@ -1,20 +1,56 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<!-- Page Title -->
-<section class="page-title p_relative centred">
-    <div class="bg-layer p_absolute l_0 parallax_none parallax-bg" data-parallax='{"y": 100}' style="background-image: url(<?= get_picture("settings_v", $settings->service_detail_logo) ?>);"></div>
-    <div class="auto-container">
-        <div class="content-box">
-            <h1 class="d_block fs_60 lh_70 fw_bold mb_10"><?= $page_title ?></h1>
+<!--Page Header Start-->
+<section class="page-header">
+    <div class="page-header__bg" style="background-image: url(<?= get_picture("settings_v", $settings->service_detail_logo) ?>);">
+    </div>
+    <div class="page-header__shape-2 float-bob-x">
+        <img loading="lazy" class="lazyload img-fluid" data-src="<?= asset_url("public/images/shapes/page-header-shape-2.webp") ?>" alt="<?= $settings->company_name ?>">
+    </div>
+    <div class="page-header__shape-1 float-bob-y">
+        <img loading="lazy" class="lazyload img-fluid" data-src="<?= asset_url("public/images/shapes/page-header-shape-1.webp") ?>" alt="<?= $settings->company_name ?>">
+    </div>
+    <div class="page-header__shape-3 float-bob-x">
+        <img loading="lazy" class="lazyload img-fluid" data-src="<?= asset_url("public/images/shapes/page-header-shape-3.webp") ?>" alt="<?= $settings->company_name ?>">
+    </div>
+    <div class="container">
+        <div class="page-header__inner">
+            <h2><?= $page_title ?></h2>
         </div>
     </div>
 </section>
-<!-- End Page Title -->
+<!--Page Header End-->
 
-<section class="project-details project-details-4 project-details-5 p_relative pt_100 pb_100">
-    <div class="auto-container">
-        <div class="project-details-content p_relative d_block">
-            <div class="auto-container">
-                <div class="carousel-box p_relative mb_110">
+
+<!--Project Details Start-->
+<section class="project-details">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <h3 class="project-details__title-1"><?= $service->title ?></h3>
+                <p class="project-details__text-1"><?= $service->description ?></p>
+                <div class="project-details__info">
+                    <div class="project-details__shape-1"></div>
+                    <ul class="list-unstyled project-details__info-list">
+                        <?php if ($service->category_title) : ?>
+                            <li>
+                                <p><?= lang("serviceCategory") ?>:</p>
+                                <h4><a rel="dofollow" title="<?= $service->category_title ?>" href="<?= base_url(lang("routes_services") . "/" . $service->category_seo_url) ?>"><?= $service->category_title ?></a></h4>
+                            </li>
+                        <?php endif ?>
+                        <li>
+                            <p><?= lang("shareService") ?> :</p>
+                            <div class="project-details__social-list">
+                                <a class="mx-1" rel="nofollow" title="Facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?= urlencode(str_replace("tr/index.php/", "", current_url())) ?>&t=<?= urlencode(str_replace("tr/index.php/", "", current_url())) ?>"><i class="fa-brands fa-facebook"></i></a>
+                                <a class="mx-1" rel="nofollow" title="Twitter" target="_blank" href="https://twitter.com/intent/tweet?text=<?= urlencode(str_replace("tr/index.php/", "", current_url())) ?>&t=<?= urlencode(str_replace("tr/index.php/", "", current_url())) ?>"><i class="fa-brands fa-twitter"></i></a>
+                                <a class="mx-1" rel="nofollow" title="Linkedin" target="_blank" href="https://www.linkedin.com/sharing/share-offsite/?url=<?= urlencode(str_replace("tr/index.php/", "", current_url())) ?>&title=<?= urlencode($service->title) ?>"><i class="fa-brands fa-linkedin"></i></a>
+                                <a class="mx-1" rel="nofollow" title="Pinterest" target="_blank" href="https://pinterest.com/pin/create/button/?url=<?= urlencode(str_replace("tr/index.php/", "", current_url())) ?>&description=<?= urlencode($service->title) ?>"><i class="fa-brands fa-pinterest"></i></a>
+                                <a class="mx-1" rel="nofollow" title="Reddit" target="_blank" href="https://www.reddit.com/submit?url=<?= urlencode(str_replace("tr/index.php/", "", current_url())) ?>&title=<?= urlencode($service->title) ?>"><i class="fa-brands fa-reddit"></i></a>
+                                <a class="mx-1" rel="nofollow" title="Whatsapp" target="_blank" href="https://wa.me/?text=<?= urlencode(str_replace("tr/index.php/", "", current_url())) ?>"><i class="fa-brands fa-whatsapp"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="project-details__img">
                     <div id="carouselExample" class="carousel slide" data-bs-ride="true">
                         <div class="carousel-inner lightgallery serviceGallery">
                             <?php $i = 0 ?>
@@ -65,42 +101,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="text centred ml_100 mr_100 mb_60">
-                    <p class="font_family_poppins lh_28"><?= $service->description ?></p>
-                </div>
-
-                <div class="porject-info p_relative d_block">
-                    <div class="info-list clearfix ml_100 mb_110">
-                        <div class="row align-items-center align-self-center align-content-center clearfix">
-                            <div class="col-lg-6 col-md-6 col-sm-12 single-column">
-                                <div class="single-item p_relative d_block">
-                                    <?php if ($service->category_title) : ?>
-                                        <h6 class="d_block fs_16 fw_medium mb_8"><?= lang("serviceCategory") ?>:</h6>
-                                        <p class="font_family_inter"><a rel="dofollow" title="<?= $service->category_title ?>" href="<?= base_url(lang("routes_services") . "/" . $service->category_seo_url) ?>"><?= $service->category_title ?></a></p>
-                                    <?php endif ?>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12 single-column">
-                                <div class="single-item p_relative d_block border rounded p-3">
-                                    <h6 class="d_block fs_16 fw_medium mb_8"><?= lang("shareService") ?> :</h6>
-                                    <p class="font_family_inter" style="width: fit-content;">
-                                        <a class="mx-1" rel="nofollow" title="Facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?= urlencode(str_replace("tr/index.php/", "", current_url())) ?>&t=<?= urlencode(str_replace("tr/index.php/", "", current_url())) ?>"><i class="fa-brands fa-facebook"></i></a>
-                                        <a class="mx-1" rel="nofollow" title="Twitter" target="_blank" href="https://twitter.com/intent/tweet?text=<?= urlencode(str_replace("tr/index.php/", "", current_url())) ?>&t=<?= urlencode(str_replace("tr/index.php/", "", current_url())) ?>"><i class="fa-brands fa-twitter"></i></a>
-                                        <a class="mx-1" rel="nofollow" title="Linkedin" target="_blank" href="https://www.linkedin.com/sharing/share-offsite/?url=<?= urlencode(str_replace("tr/index.php/", "", current_url())) ?>&title=<?= urlencode($service->title) ?>"><i class="fa-brands fa-linkedin"></i></a>
-                                        <a class="mx-1" rel="nofollow" title="Pinterest" target="_blank" href="https://pinterest.com/pin/create/button/?url=<?= urlencode(str_replace("tr/index.php/", "", current_url())) ?>&description=<?= urlencode($service->title) ?>"><i class="fa-brands fa-pinterest"></i></a>
-                                        <a class="mx-1" rel="nofollow" title="Reddit" target="_blank" href="https://www.reddit.com/submit?url=<?= urlencode(str_replace("tr/index.php/", "", current_url())) ?>&title=<?= urlencode($service->title) ?>"><i class="fa-brands fa-reddit"></i></a>
-                                        <a class="mx-1" rel="nofollow" title="Whatsapp" target="_blank" href="https://wa.me/?text=<?= urlencode(str_replace("tr/index.php/", "", current_url())) ?>"><i class="fa-brands fa-whatsapp"></i></a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-
         </div>
     </div>
 </section>
+<!--Project Details End-->
 
 <script>
     window.addEventListener('DOMContentLoaded', () => {

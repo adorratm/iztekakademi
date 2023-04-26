@@ -1,8 +1,8 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php if (!empty($slides)) : ?>
-    <!-- banner-section -->
-    <section class="slider-one centred p_relative">
-        <div class="banner-carousel owl-theme owl-carousel owl-dots-none">
+    <!-- Main Sllider Start -->
+    <section class="main-slider">
+        <div class="main-slider__carousel owl-carousel owl-theme thm-owl__carousel" data-owl-options='{"loop": true, "items": 1, "navText": ["<span class=\"fa fa-arrow-left\"></span>","<span class=\"fa fa-arrow-right\"></span>"], "margin": 0, "dots": false, "nav": true, "animateOut": "slideOutDown", "animateIn": "fadeIn", "active": true, "smartSpeed": 1000, "autoplay": true, "autoplayTimeout": 7000, "autoplayHoverPause": false}'>
             <?php $i = 0 ?>
             <?php foreach ($slides as $key => $value) : ?>
                 <?php if (strtotime($value->sharedAt) <= strtotime("now")) : ?>
@@ -36,31 +36,19 @@
                             <?php endif ?>
                         <?php endif ?>
                     <?php endif ?>
-                    <div class="slide-item p_relative">
-                        <div class="shape-layer">
-                            <div class="shape-1 p_absolute l_0 z_1" style="background-image: url(<?= asset_url("public/images/shape/shape-2.webp") ?>);"></div>
-                            <div class="shape-2 p_absolute l_0 t_0 z_1" style="background-image: url(<?= asset_url("public/images/shape/shape-3.webp") ?>);"></div>
-                            <div class="shape-3 p_absolute r_0 b_0 z_1" style="background-image: url(<?= asset_url("public/images/shape/shape-4.webp") ?>);"></div>
-                            <div class="shape-4 p_absolute r_0 b_0 z_1" style="background-image: url(<?= asset_url("public/images/shape/shape-5.webp") ?>);"></div>
-                        </div>
-                        <div class="image-layer">
-                            <?php if (!empty($value->allowButton) && !empty($value->button_caption) && !empty($sUrl)) : ?>
-                                <a rel="dofollow" title="<?= $value->title ?>" href="<?= $sUrl ?>">
-                                    <img data-src="<?= get_picture("slides_v", $value->img_url) ?>" class="lazyload w-100 img-fluid" alt="<?= $value->title ?>">
-                                </a>
-                            <?php else : ?>
-                                <img data-src="<?= get_picture("slides_v", $value->img_url) ?>" class="lazyload w-100 img-fluid" alt="<?= $value->title ?>">
-                            <?php endif ?>
-                        </div>
-                        <div class="auto-container d-none">
-                            <div class="content-box p_relative d_block z_5">
-                                <h2 class="p_relative d_iblock fw_bold fs_80 lh_70 mb_25"><span class="slider-text-anim"><?= $value->title ?></span></h2>
-                                <p class="d_block fs_18 mb_45"><?= clean($value->description) ?></p>
-                                <?php if (!empty($value->allowButton) && !empty($value->button_caption) && !empty($sUrl)) : ?>
-                                    <div class="btn-box clearfix">
-                                        <a rel="dofollow" title="<?= $value->title ?>" href="<?= $sUrl ?>" class="theme-btn theme-btn-two"><span data-text="<?= $value->button_caption ?>"><?= $value->button_caption ?></span></a>
-                                    </div>
-                                <?php endif ?>
+                    <div class="item main-slider__slide-1">
+                        <div class="main-slider__bg" style="background-image: url(<?= get_picture("slides_v", $value->img_url) ?>);">
+                        </div><!-- /.slider-one__bg -->
+                        <div class="main-slider__shadow"></div>
+                        <div class="container">
+                            <div class="main-slider__content">
+                                <h2 class="main-slider__title"><?= $value->title ?></h2>
+                                <p class="main-slider__sub-title"><?= clean($value->description) ?></p>
+                                <div class="main-slider__btn-box">
+                                    <?php if (!empty($value->allowButton) && !empty($value->button_caption) && !empty($sUrl)) : ?>
+                                        <a rel="dofollow" title="<?= $value->title ?>" href="<?= $sUrl ?>" class="main-slider__btn thm-btn"><?= $value->button_caption ?></a>
+                                    <?php endif ?>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -69,7 +57,7 @@
             <?php endforeach ?>
         </div>
     </section>
-    <!-- banner-section end -->
+    <!--Main Sllider Start -->
 <?php endif ?>
 
 <?php $this->load->view(@str_replace("/index", "", $this->viewFolder) . "/desktop"); ?>

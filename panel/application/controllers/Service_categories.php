@@ -69,7 +69,7 @@ class Service_categories extends MY_Controller
         $data = rClean($this->input->post());
         if (checkEmpty($data)["error"] && checkEmpty($data)["key"] != "top_id") :
             $key = checkEmpty($data)["key"];
-            echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Faaliyet Kategorisi Kaydı Yapılırken Hata Oluştu. \"{$key}\" Bilgisini Doldurduğunuzdan Emin Olup Tekrar Deneyin."]);
+            echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Hizmet Kategorisi Kaydı Yapılırken Hata Oluştu. \"{$key}\" Bilgisini Doldurduğunuzdan Emin Olup Tekrar Deneyin."]);
         else :
             $getRank = $this->service_category_model->rowCount(["lang" => $this->session->userdata('activeLang')]);
             if (!empty($_FILES)) :
@@ -78,7 +78,7 @@ class Service_categories extends MY_Controller
                     if ($image["success"]) :
                         $data["img_url"] = $image["file_name"];
                     else :
-                        echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Faaliyet Kategorisi Kaydı Yapılırken Hata Oluştu. Faaliyet Kategorisi Görseli Seçtiğinizden Emin Olup Tekrar Deneyin."]);
+                        echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Hizmet Kategorisi Kaydı Yapılırken Hata Oluştu. Hizmet Kategorisi Görseli Seçtiğinizden Emin Olup Tekrar Deneyin."]);
                         die();
                     endif;
                 endif;
@@ -87,7 +87,7 @@ class Service_categories extends MY_Controller
                     if ($image["success"]) :
                         $data["home_url"] = $image["file_name"];
                     else :
-                        echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Faaliyet Kategorisi Kaydı Yapılırken Hata Oluştu. Faaliyet Kategorisi Anasayfa Yatay Görseli Seçtiğinizden Emin Olup Tekrar Deneyin."]);
+                        echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Hizmet Kategorisi Kaydı Yapılırken Hata Oluştu. Hizmet Kategorisi Anasayfa Yatay Görseli Seçtiğinizden Emin Olup Tekrar Deneyin."]);
                         die();
                     endif;
                 endif;
@@ -96,7 +96,7 @@ class Service_categories extends MY_Controller
                     if ($image["success"]) :
                         $data["banner_url"] = $image["file_name"];
                     else :
-                        echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Faaliyet Kategorisi Kaydı Yapılırken Hata Oluştu. Faaliyet Kategorisi Banner Görseli Seçtiğinizden Emin Olup Tekrar Deneyin."]);
+                        echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Hizmet Kategorisi Kaydı Yapılırken Hata Oluştu. Hizmet Kategorisi Banner Görseli Seçtiğinizden Emin Olup Tekrar Deneyin."]);
                         die();
                     endif;
                 endif;
@@ -107,9 +107,9 @@ class Service_categories extends MY_Controller
             $data["rank"] = $getRank + 1;
             $insert = $this->service_category_model->add($data);
             if ($insert) :
-                echo json_encode(["success" => true, "title" => "Başarılı!", "message" => "Faaliyet Kategorisi Başarıyla Eklendi."]);
+                echo json_encode(["success" => true, "title" => "Başarılı!", "message" => "Hizmet Kategorisi Başarıyla Eklendi."]);
             else :
-                echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Faaliyet Kategorisi Eklenirken Hata Oluştu, Lütfen Tekrar Deneyin."]);
+                echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Hizmet Kategorisi Eklenirken Hata Oluştu, Lütfen Tekrar Deneyin."]);
             endif;
         endif;
     }
@@ -129,7 +129,7 @@ class Service_categories extends MY_Controller
         $data = rClean($this->input->post());
         if (checkEmpty($data)["error"] && checkEmpty($data)["key"] != "img_url" && checkEmpty($data)["key"] != "home_url" && checkEmpty($data)["key"] != "banner_url") :
             $key = checkEmpty($data)["key"];
-            echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Faaliyet Kategorisi Güncelleştirilirken Hata Oluştu. \"{$key}\" Bilgisini Doldurduğunuzdan Emin Olup Tekrar Deneyin."]);
+            echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Hizmet Kategorisi Güncelleştirilirken Hata Oluştu. \"{$key}\" Bilgisini Doldurduğunuzdan Emin Olup Tekrar Deneyin."]);
         else :
             $service_category = $this->service_category_model->get(["id" => $id]);
             if (!empty($service_category->img_url)) :
@@ -145,7 +145,7 @@ class Service_categories extends MY_Controller
                         endif;
                     endif;
                 else :
-                    echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Faaliyet Kategorisi Güncelleştirilirken Hata Oluştu. Faaliyet Kategorisi Görseli Seçtiğinizden Emin Olup Tekrar Deneyin."]);
+                    echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Hizmet Kategorisi Güncelleştirilirken Hata Oluştu. Hizmet Kategorisi Görseli Seçtiğinizden Emin Olup Tekrar Deneyin."]);
                     die();
                 endif;
             endif;
@@ -162,7 +162,7 @@ class Service_categories extends MY_Controller
                         endif;
                     endif;
                 else :
-                    echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Faaliyet Kategorisi Güncelleştirilirken Hata Oluştu. Faaliyet Kategorisi Anasayfa Yatay Görseli Seçtiğinizden Emin Olup Tekrar Deneyin."]);
+                    echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Hizmet Kategorisi Güncelleştirilirken Hata Oluştu. Hizmet Kategorisi Anasayfa Yatay Görseli Seçtiğinizden Emin Olup Tekrar Deneyin."]);
                     die();
                 endif;
             endif;
@@ -179,16 +179,16 @@ class Service_categories extends MY_Controller
                         endif;
                     endif;
                 else :
-                    echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Faaliyet Kategorisi Güncelleştirilirken Hata Oluştu. Faaliyet Kategorisi Banner Görseli Seçtiğinizden Emin Olup Tekrar Deneyin."]);
+                    echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Hizmet Kategorisi Güncelleştirilirken Hata Oluştu. Hizmet Kategorisi Banner Görseli Seçtiğinizden Emin Olup Tekrar Deneyin."]);
                     die();
                 endif;
             endif;
             $data["seo_url"] = seo($data["title"]);
             $update = $this->service_category_model->update(["id" => $id], $data);
             if ($update) :
-                echo json_encode(["success" => true, "title" => "Başarılı!", "message" => "Faaliyet Kategorisi Başarıyla Güncelleştirildi."]);
+                echo json_encode(["success" => true, "title" => "Başarılı!", "message" => "Hizmet Kategorisi Başarıyla Güncelleştirildi."]);
             else :
-                echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Faaliyet Kategorisi Güncelleştirilirken Hata Oluştu, Lütfen Tekrar Deneyin."]);
+                echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Hizmet Kategorisi Güncelleştirilirken Hata Oluştu, Lütfen Tekrar Deneyin."]);
             endif;
         endif;
     }
@@ -232,9 +232,9 @@ class Service_categories extends MY_Controller
                         endif;
                     endforeach;
                 endif;
-                echo json_encode(["success" => true, "title" => "Başarılı!", "message" => "Faaliyet Kategorisi Başarıyla Silindi."]);
+                echo json_encode(["success" => true, "title" => "Başarılı!", "message" => "Hizmet Kategorisi Başarıyla Silindi."]);
             else :
-                echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Faaliyet Kategorisi Silinirken Hata Oluştu, Lütfen Tekrar Deneyin."]);
+                echo json_encode(["success" => false, "title" => "Başarısız!", "message" => "Hizmet Kategorisi Silinirken Hata Oluştu, Lütfen Tekrar Deneyin."]);
             endif;
         endif;
     }
